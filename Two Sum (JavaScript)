@@ -1,0 +1,15 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let myList = []
+    const len = nums.length;
+    for (let i = 0; i < len; i++){
+        if (myList.includes(nums[i])) {
+            return [myList.indexOf(nums[i]),i];
+  }
+    myList.push(target - nums[i]);
+}
+};
