@@ -1,0 +1,17 @@
+/**
+ * @param {number[]} A
+ * @return {number}
+ */
+var repeatedNTimes = function(A) {
+    if(A.length==0){
+        return 0;
+    }
+    let obj={};
+    for(let i=0;i<A.length;i++){
+        if(!obj[A[i]]){
+            obj[A[i]]=0;
+        }
+        obj[A[i]]++;
+    }
+    return Object.keys(obj).reduce((a, b) => obj[a] > obj[b] ? a : b);;
+};
