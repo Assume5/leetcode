@@ -1,0 +1,23 @@
+/**
+ * @param {string} J
+ * @param {string} S
+ * @return {number}
+ */
+var numJewelsInStones = function(J, S) {
+    let dict={};
+    let count=0;
+    for(let i=0;i<S.length;i++){
+        if(!dict[S[i]]){
+            dict[S[i]]=1;
+        }
+        else{
+            dict[S[i]]+=1
+        }
+    }
+    for(let i=0;i<J.length;i++){
+        if(dict[J[i]]){
+        count+=dict[J[i]];
+        }
+    }
+    return count;
+};
