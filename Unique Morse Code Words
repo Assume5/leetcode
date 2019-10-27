@@ -1,0 +1,23 @@
+/**
+ * @param {string[]} words
+ * @return {number}
+ */
+var uniqueMorseRepresentations = function(words) {
+    if(words.length==0){
+        return 0;
+    }
+    const morse=[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
+    let count=0;
+    let array=[];
+    for(let i=0;i<words.length;i++){
+        let temp="";
+        for(let j=0;j<words[i].length;j++){
+            temp+=morse[words[i][j].charCodeAt()-97];
+            }
+        if(!array.includes(temp)){
+            array[count]=temp;
+            count++
+        }
+    } 
+    return array.length;
+};
