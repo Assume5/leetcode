@@ -1,0 +1,14 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var subtractProductAndSum = function(n) {
+    const num=n.toString();
+    let mult=1;
+    let add=0;
+    for(let i=0;i<num.length;i++){
+        mult*=parseInt(num[i])
+        add+=parseInt(num[i])
+    }
+    return mult-add;
+};
