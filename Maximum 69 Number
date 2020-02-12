@@ -1,0 +1,19 @@
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var maximum69Number  = function(num) {
+    const value=num.toString();
+    let list=[num];
+    for(let i=0;i<value.length;i++){
+        let stringList=value.split("");
+        if(stringList[i]==='6'){
+            stringList[i]='9';
+        }
+        else{
+            stringList[i]='6'
+        }
+        list.push(parseInt(stringList.join("")))
+    }
+    return Math.max(...list)
+};
