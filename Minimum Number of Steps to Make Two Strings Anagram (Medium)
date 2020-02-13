@@ -1,0 +1,24 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {number}
+ */
+var minSteps = function(s, t) {
+    let map={};
+    for(let i=0;i<s.length;i++){
+        if(!map[s[i]]){
+            map[s[i]]=0;
+        }
+        map[s[i]]+=1
+    }
+    let count=0;
+    for(let i=0;i<t.length;i++){
+        if(!map[t[i]]){
+            count+=1
+        }
+        else{
+            map[t[i]]-=1;
+        }
+    }
+    return count;
+};
