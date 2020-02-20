@@ -1,0 +1,18 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var majorityElement = function(nums) {
+    let map={};
+    let result=[]
+    for(let i=0;i<nums.length;i++){
+        if(!map[nums[i]]){
+            map[nums[i]]=0;
+        }
+        map[nums[i]]+=1;
+        if(!result.includes(nums[i])&&map[nums[i]]>nums.length/3){
+            result.push(nums[i]);
+        }
+    }
+    return result;
+};
